@@ -45,9 +45,3 @@ export class SecurityServiceImpl implements SecurityService {
       .pipe(filter(it => it !== undefined));
   }
 }
-
-function userToPrincipal(it: User | null) {
-  const id = it && it.id
-  if (!it || !id) throw "Bad credentials";
-  return new Principal(id, it.name);
-}
